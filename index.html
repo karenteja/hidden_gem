@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hidden Gem</title>
+
+	<!-- meta:vp -->
+
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="white">
+
+
+	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/theme.css">
+	<link rel="stylesheet" href="css/grid.css">
+
+	<script src="lib/js/jquery-2.2.4.min.js"></script>
+
+	<script src="js/template.js"></script>
+	<script src="js/pages.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/helpers.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/maps.js"></script>
+
+	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
+	
+</head>
+<body>
+
+	<!-- LOGIN PAGE -->
+	<section data-role="page" id="page-login">
+		<div data-role="main" class="flex-parent flex-vertical">
+			
+			<div class="flex-child">
+				<div style="text-align:center">
+					<img src="img/logo.jpg" alt="" class="login-logo">
+				</div>
+			</div>
+			<div class="flex-none flex-parent flex-align-center flex-justify-center" style="padding-bottom:3em">
+				<form id="form-login" data-role="none" style="width:70vw;" data-ajax="false">
+					<div class="form-control">
+						<label class="form-label" for="form-login-username">Username</label>
+						<input class="form-input" type="text" id="form-login-username" data-role="none">
+					</div>
+					<div class="form-control">
+						<label class="form-label" for="form-login-password">Password</label>
+						<input class="form-input" type="password" id="form-login-password" data-role="none">
+					</div>
+					
+					<div class="form-control">
+						<input class="form-button" type="submit" data-role="none" value="Login">
+					</div>
+						<div class="signup-link">
+							<h5>Don't have an account? <a href="#page-signup" style="text-decoration: underline;">Sign Up.</a></h5>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+
+		</div>
+	</section>
+
+	<!-- SIGNUP PAGE -->
+	<section data-role="page" id="page-signup">
+		<div data-role="main" class="flex-parent flex-vertical flex-align-center flex-justify-center">
+			<form id="form-signup" data-role="none" style="width:70vw;" data-ajax="false">
+				<div class="form-control">
+					<label class="form-label" for="form-signup-username">Choose a Username</label>
+					<input class="form-input" type="text" id="form-signup-username" data-role="none">
+				</div>
+				<div class="form-control">
+					<label class="form-label" for="form-signup-email">Type your Email</label>
+					<input class="form-input" type="text" id="form-signup-email" data-role="none">
+				</div>
+				<div class="form-control">
+					<label class="form-label" for="form-signup-password">Choose a Password</label>
+					<input class="form-input" type="password" id="form-signup-password" data-role="none">
+				</div>
+				<div class="form-control">
+					<label class="form-label" for="form-signup-password-confirm">Type the Password again</label>
+					<input class="form-input" type="password" id="form-signup-password-confirm" data-role="none">
+				</div>
+				
+				<div class="form-control">
+					<input class="form-button" type="submit" data-role="none" value="Sign Up">
+					<div class="signup-link">
+						<a href="#page-login">Cancel</a>
+					</div>
+				</div>
+			</form>
+			
+
+		</div>
+	</section>
+
+	<!-- BARS LIST -->
+
+	<section class="bc-w" data-role="page" id="bars-list">
+		<header data-role="header">
+			<h1 class="fc-2">Bars List</h1>
+			<ul class="nav flex-parent">
+				<li class="flex-none">
+				<a href="#back" data-rel="back"><h5 class="fc-2" style="margin-top: 0px;"><img src="img/back_icon.png" alt="Logo" class="media-image" width="15px"> Back</h5></a>
+				</li>
+				<li class="flex-child"></li>
+				<li class="flex-none fc-2">
+					<a href="#" class="edit-user" data-activate="#list-add-modal"  style="font-size:0.83em; font-weight: 300; margin-top: 6px;"><img src="img/add_icon.png" alt="Add" class="media-image" width="15px"> Add</a>
+				</li>
+			</ul>
+		</header>
+
+		<footer data-role="footer" data-template="#footer-template"></footer>
+
+		<div data-role="main" class="flex-parent flex-vertical">
+			<div class="flex-none pt-1 pb-1">
+				<div class="search-box flex-parent flex-align-center">
+					<div class="flex-child">
+						<label class="hotdog">
+							<input type="search" class="search" data-role="none" placeholder="Search...">
+						</label>
+					</div>
+					<!--filter button(?)-->
+				</div>
+				<div class="filterbox pt-1">
+				</div>
+			</div>
+			
+			<div class="bars-list"></div>
+
+		</div>
+
+		<div id="list-add-modal" class="modal">
+			<div class="modal-back" data-deactivate="#list-add-modal"></div>
+			<form data-ajax="false" id="list-add-form" class="modal-content">
+				<div class="modal-head ac"><h3 class="fc-w">ADD BARS</h3></div>
+				<div class="modal-body">
+				<div class="form-control">
+					<label class="imagepicker imagepicker-replace thumbnail">
+					    <input type='file' data-role="none">
+					  </label>
+				</div>
+				<div class="form-control">
+					<label for="list-add-name" class="form-label"><h5>NAME</h5></label>
+					<input class="form-input" type="text" data-role="none" id="list-add-name">
+				</div>
+				<div class="form-control">
+					<label for="list-add-type" class="form-label"><h5>TYPE</h5></label>
+					<input class="form-input" type="text" data-role="none" id="list-add-type">
+				</div>
+				<div class="form-control">
+					<label for="list-add-mood" class="form-label"><h5>MOOD</h5></label>
+					<input class="form-input" type="text" data-role="none" id="list-add-mood">
+				</div>
+			</div>
+				<div class="modal-foot">
+
+					<input class="form-button" type="submit" data-role="none" value="Submit">
+				</div>
+			</form>
+		</div>
+
+	</section>
+	<section data-role="page" id="page-profile">
+		<header data-role="header">
+			<h1>Profile Page</h1>
+			<ul class="nav flex-parent">
+				<li class="flex-none">
+				<!-- 	<a href="#back" data-rel="back">back</a> -->
+				</li>
+				<li class="flex-child"></li>
+				<li class="flex-none">
+					<a href="#" class="edit-user" data-activate="#edit-user-modal">edit</a>
+				</li>
+			</ul>
+		</header>
+		<footer data-role="footer" data-template="#footer-template"></footer>
+		<div data-role="main">
+			<div class="user-profile">
+			</div>
+		</div>
+
+
+
+		<!--FOOTER TEMPLATE-->
+
+<script type="text/template" id="footer-template">
+	<ul class="nav flex-parent flex-justify-center" style="text-align:center">
+		<li class="flex-child"><label data-role="none" for""><a href="#page-map"><img style="width: 40px; margin: .6em;" src="img/map_icon.png" alt=""></a></label></li>
+		<li class="flex-child"><label data-role="none" for""><a href="#bars-list"><img style="width: 40px; margin: .8em;" src="img/list_icon.png" alt=""></a></label></li>
+		<li class="flex-child"><label data-role="none" for""><a href="#page-profile"><img style="width: 40px; margin: .6em;" src="img/profile_icon.png" alt=""></a></label></li>
+	</ul>
+</script>
+
+	
+
+
+</body>
+</html>
