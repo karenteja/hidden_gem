@@ -7,6 +7,11 @@ from dataclasses import dataclass, field, replace
 from dataclasses_json import dataclass_json
 from random import sample, seed, randint
 
+
+"""
+This is a script that parses user data and saved bar data to create a cleaner template data for an app.
+"""
+
 DEFAULT_PEOPLE_SOURCE = '../data/people.json'
 DEFAULT_BAR_SOURCE = '../data/bars.json'
 DEFAULT_NEW_DATA_DEST = '../data/data.json'

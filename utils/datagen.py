@@ -120,7 +120,7 @@ def main():
             save_locally(data)
         else:
             print('Here is a piece of your data:')
-            print(data[0]['businesses'][0])
+            print(data[0]['businesses'][:5])
 
 
 if __name__ == '__main__':
