@@ -9,10 +9,11 @@ from random import sample, seed, randint
 
 DEFAULT_PEOPLE_SOURCE = '../data/people.json'
 DEFAULT_BAR_SOURCE = '../data/bars.json'
-DEFAULT_NEW_PEOPLE_DEST = '../data/data_new.json'
+DEFAULT_NEW_DATA_DEST = '../data/data.json'
 DEFAULT_MAX_FAVORITES = 10
 DEFAULT_MAX_SAVED_FOR_LATER = 20
 DEFAULT_MAX_EXPLORED = 30
+DEFAULT_NUM_USERS = 10
 
 
 @dataclass(eq=True, frozen=True)
@@ -194,7 +195,7 @@ def write_new_data(users: List[User], dest_name: str):
 def main():
     check_data_present(DEFAULT_PEOPLE_SOURCE, DEFAULT_BAR_SOURCE)
     users = augment_user_data(load_user_data(DEFAULT_PEOPLE_SOURCE), load_bar_data(DEFAULT_BAR_SOURCE))
-    write_new_data(users, DEFAULT_NEW_PEOPLE_DEST)
+    write_new_data(users[:DEFAULT_NUM_USERS], DEFAULT_NEW_DATA_DEST)
 
 
 if __name__ == '__main__':
